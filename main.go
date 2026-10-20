@@ -11,5 +11,7 @@ func main() {
 	fmt.Println(!true)
 	f := "hello"
 	fmt.Println(f)
-	loop.Loop()
+	loop.LoopClassic()
+	loop.LoopUsingRange(7)
+	loop.LoopWhile(false)
 }
