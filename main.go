@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"ogrev/funct"
+	ifelse "ogrev/if-else"
 	"ogrev/loop"
 )
 
@@ -14,4 +16,8 @@ func main() {
 	loop.LoopClassic()
 	loop.LoopUsingRange(7)
 	loop.LoopWhile(false)
+	ifelse.IfElseNormal(6)
+	ifelse.SwitchCaseDemo()
+	hey := funct.ReturnFunct()
+	hey()
 }
