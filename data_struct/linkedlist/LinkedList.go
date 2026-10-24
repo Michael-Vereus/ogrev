@@ -1,6 +1,8 @@
 package linkedlist
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type li struct {
 	name string
@@ -37,6 +39,17 @@ func (LinkedList *LinkedList) Add(name string) {
 	LinkedList.tail = newList // kemudian jangan lupa update LinkedList.tail menjadi mem address newList
 	// kenapa? ya karena jelas" linkedlist mencatat catatan statis kea index
 	// otomatis harus di update tiap kali ada operasi
+}
+func (LinkedList *LinkedList) FindByName(name string) {
+	startLi := LinkedList.head
+	for startLi != nil {
+		if startLi.name == name {
+			fmt.Println("Found It", name)
+			return
+		}
+		startLi = startLi.next // move to next gaada ini basically for i tanpa i++
+	}
+	fmt.Println("Not Found ", name)
 }
 func (LinkedList *LinkedList) PrintOnConsole() {
 	start := LinkedList.head

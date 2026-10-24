@@ -83,5 +83,7 @@ func main() {
 	listOfNames.Add("Ver")
 	listOfNames.Add("Mika")
 	listOfNames.Add("Lim")
+	listOfNames.FindByName("Ver")
+	listOfNames.FindByName("Tara")
 	listOfNames.PrintOnConsole()
 }
