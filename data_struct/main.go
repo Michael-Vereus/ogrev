@@ -86,4 +86,6 @@ func main() {
 	listOfNames.FindByName("Ver")
 	listOfNames.FindByName("Tara")
 	listOfNames.PrintOnConsole()
+	listOfNames.DeleteByName("Ver")
+	listOfNames.PrintOnConsole()
 }

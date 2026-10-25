@@ -51,6 +51,38 @@ func (LinkedList *LinkedList) FindByName(name string) {
 	}
 	fmt.Println("Not Found ", name)
 }
+
+func (LinkedList *LinkedList) DeleteByName(name string) {
+	startLi := LinkedList.head
+	var prevLi *li = nil
+	for startLi != nil {
+		if startLi.name == name {
+			// logika e kalo org mau nge hapus data yg posisi e di head otomatis kan pointer prevLi masi kosong alias nil
+			// jadi ya tinggal tambahin checking if prevli == nil
+			if prevLi == nil {
+				// basically geser pointer head di linked list ke pointer yg di next nya
+				LinkedList.head = LinkedList.head.next
+				fmt.Println("Deleted ", name)
+				return
+			}
+			// kalo ini buat handle kasus dimana user hapus di tail alias di akhir
+			// basically ubah pointer tail jadi ke sebelumnya dan set next nya = nil
+			if startLi.next == nil {
+				LinkedList.tail = prevLi
+				LinkedList.tail.next = nil
+				fmt.Println("Deleted ", name)
+				return
+			}
+			//
+			prevLi.next = startLi.next
+			fmt.Println("Deleted ", name)
+			return
+		}
+		prevLi = startLi
+		startLi = startLi.next
+	}
+}
+
 func (LinkedList *LinkedList) PrintOnConsole() {
 	start := LinkedList.head
 	for start != nil {
