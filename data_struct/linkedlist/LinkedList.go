@@ -21,6 +21,10 @@ func newLi(name string) *li {
 	return &li{name: name, next: nil}
 }
 
+func (LinkedList *LinkedList) MovwHeadToNext() {
+	LinkedList.head = LinkedList.head.next
+}
+
 func (LinkedList *LinkedList) Add(name string) {
 	startLi := LinkedList.head
 	newList := newLi(name)
